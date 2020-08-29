@@ -58,3 +58,12 @@ var nuovoStudente = {
 // Inserisco il nuovo oggetto nell'array di studenti
 studenti.push(nuovoStudente);
 console.log(studenti);
+
+var source = document.getElementById("entry-template").innerHTML;
+var template = Handlebars.compile(source);
+
+for (var i = 0; i < studenti.length; i++) {
+  var stud = studenti[i];
+  var html = template(stud);
+  $("#classe").append(html);
+}
